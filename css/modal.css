@@ -27,9 +27,24 @@
     color: whitesmoke;
 }
 
-.modal a {
-    font-size: large;
-    color: whitesmoke;
+.modal p {
+    font-size: medium;
+    color: rgb(194, 194, 194);
+}
+
+.modal span {
+    font-size: small;
+    margin-left: 20px;
+    color: rgb(194, 194, 194);
+}
+
+.modal input {
+    float: right;
+}
+
+.wrp-content {
+    background-color: #272727;
+    padding: 7px;
 }
 
 
