@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <script src="https://kit.fontawesome.com/b12a5b37b5.js" crossorigin="anonymous"></script>
+    <title>Cash Engine</title>
+</head>
+
+<body>
+    <section class="main">
+        <div class="menu" id="menu">
+            <div class="mn-link top-menu-border">
+                <div class="icon-wrapper">
+                    <i class="link-icon fas fa-home icon-menu"></i>
+                </div>
+                <div class="text-wrapper">
+                    <div class="link-text">HOME</div>
+                </div>
+            </div>
+            <div class="mn-link">
+                <div class="icon-wrapper">
+                    <i class="link-icon fas fa-memory icon-menu"></i>
+                </div>
+                <div class="text-wrapper">
+                    <div class="link-text">CACHE</div>
+                </div>
+            </div>
+            <a id="myBtn">
+                <div class="mn-link">
+                    <div class="icon-wrapper">
+                        <i class="link-icon fas fa-cogs icon-menu"></i>
+                    </div>
+                    <div class="text-wrapper">
+                        <div class="link-text">SETTINGS</div>
+                    </div>
+                </div>
+            </a>
+            <a onclick="MenuToggle()">
+                <div class="mn-link-openclose">
+                    <div class="icon-wrapper" id="tgl-menu">
+                        <i class="link-icon fas fa-arrow-left icon-menu"></i>
+                    </div>
+                    <div class="text-wrapper">
+                        <div class="link-text">Collapse</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="desktop"></div>
+        <div class="bottom-line">
+            VER Cache Engine Canary 0.01
+        </div>
+    </section>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <a>SETTINGS</a>
+            <p>Cache Size</p>
+            <p>Block Size</p>
+            <p>Number of Sets</p>
+            <p>Separated (Addressing/Data) or United CACHE</p>
+            <p>Reallocation Policy (Write through/Write back)</p>
+            <p>Write Policy (FIFO,LRU,LFU)</p>
+        </div>
+
+    </div>
+
+    <script src="js/modal.js"></script>
+    <script src="js/menu.js"></script>
+</body>
+
+</html>
