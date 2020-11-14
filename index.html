@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/scrollbar.css">
     <script src="https://kit.fontawesome.com/b12a5b37b5.js" crossorigin="anonymous"></script>
     <title>Cash Engine</title>
 </head>
@@ -26,7 +27,7 @@
                     <i class="link-icon fas fa-memory icon-menu"></i>
                 </div>
                 <div class="text-wrapper">
-                    <div class="link-text">CACHE</div>
+                    <div class="link-text">ADDRESS</div>
                 </div>
             </div>
             <a id="myBtn">
@@ -50,7 +51,11 @@
                 </div>
             </a>
         </div>
-        <div class="desktop"></div>
+        <div class="desktop">
+            <div id="home"></div>
+            <div id="addressing_info"></div>
+            <div id="home"></div>
+        </div>
         <div class="bottom-line">
             VER Cache Engine Canary 0.01
         </div>
@@ -61,31 +66,45 @@
 
         <!-- Modal content -->
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" onclick="ApplyChanges()">&times;</span>
             <a>SETTINGS</a>
 
             <p>Cache Size</p>
             <div class="wrp-content">
                 <span>Set Cache Size: </span>
-                <span><input type="number"></span>
+                <span><input type="number" id="cache_size"></span>
             </div>
 
             <p>Block Size</p>
             <div class="wrp-content">
                 <span>Set Block Size: </span>
-                <span><input type="number"></span>
+                <span><input type="number" id="block_size"></span>
             </div>
 
             <p>Number of Sets</p>
             <div class="wrp-content">
                 <span>Set Number of Sets: </span>
-                <span><input type="number"></span>
+                <span><input type="number" id="nway"></span>
             </div>
 
             <br/><br/><br/>
             <p>Separated (Addressing/Data) or United CACHE</p>
+            <div class="wrp-content">
+                <p><input type="radio" name="cache_type"> | Separated</p>
+                <p><input type="radio" name="cache_type"> | United</p>
+            </div>
             <p>Reallocation Policy (Write through/Write back)</p>
-            <p>Write Policy (FIFO,LRU,LFU)</p>
+            <div class="wrp-content">
+                <p><input type="radio" name="rewrite"> | Write Back</p>
+                <p><input type="radio" name="rewrite"> | Write Through</p>
+            </div>
+            <p>Write Policy (FIFO,LRU,LFU,RANDOM)</p>
+            <div class="wrp-content">
+                <p><input type="radio" name="w_policy"> | FIFO</p>
+                <p><input type="radio" name="w_policy"> | LRU</p>
+                <p><input type="radio" name="w_policy"> | LFU</p>
+                <p><input type="radio" name="w_policy"> | RANDOM</p>
+            </div>
         </div>
 
     </div>

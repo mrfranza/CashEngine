@@ -38,7 +38,7 @@
     color: rgb(194, 194, 194);
 }
 
-.modal input {
+.modal input[type=number] {
     float: right;
 }
 
