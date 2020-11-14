@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/address.css">
     <link rel="stylesheet" href="css/scrollbar.css">
     <script src="https://kit.fontawesome.com/b12a5b37b5.js" crossorigin="anonymous"></script>
     <title>Cash Engine</title>
@@ -53,7 +54,25 @@
         </div>
         <div class="desktop">
             <div id="home"></div>
-            <div id="addressing_info"></div>
+            <div id="addressing_info">
+                <div class="wrapper-adrs">
+                    <div class="wrapper-padding">
+                        <a>ADDRESSING INFO</a>
+
+                        <p>Cache Size</p>
+                        <div class="wrp-content">
+                            <span>Cache Lines (Cache Size/BlockSize [Only with Word = 1Byte]): </span>
+                            <span><h3 id="cache_lines">0</h3></span>
+                        </div>
+
+                        <p>Ram Size</p>
+                        <div class="wrp-content">
+                            <span>Ram Size (2^Address Lenght): </span>
+                            <span><h3 id="ram_size">0</h3></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div id="home"></div>
         </div>
         <div class="bottom-line">
@@ -71,20 +90,26 @@
 
             <p>Cache Size</p>
             <div class="wrp-content">
-                <span>Set Cache Size: </span>
-                <span><input type="number" id="cache_size"></span>
+                <span>Set Cache Size (Byte): </span>
+                <span><input type="number" id="cache_size" value="16"></span>
+            </div>
+
+            <p>RAM Address lenght</p>
+            <div class="wrp-content">
+                <span>Set Address Lenght (Bit): </span>
+                <span><input type="number" id="address_lenght" value="12"></span>
             </div>
 
             <p>Block Size</p>
             <div class="wrp-content">
-                <span>Set Block Size: </span>
-                <span><input type="number" id="block_size"></span>
+                <span>Set Block Size (Byte): </span>
+                <span><input type="number" id="block_size" value="2"></span>
             </div>
 
-            <p>Number of Sets</p>
+            <p>N.Way set associative</p>
             <div class="wrp-content">
-                <span>Set Number of Sets: </span>
-                <span><input type="number" id="nway"></span>
+                <span>Number of Sets (N=fully associative,1=direct associative, not 1 or n = nway): </span>
+                <span><input type="number" id="nway" value="1"></span>
             </div>
 
             <br/><br/><br/>

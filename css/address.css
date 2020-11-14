@@ -1,0 +1,23 @@
+.wrapper-adrs {
+    position: absolute;
+    border: 1px orange solid;
+    width: 99%;
+    height: 99%;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    padding: 0;
+    transform: translate(-50%, -50%);
+    color: whitesmoke;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: black 2px 2px 2px;
+}
+
+.wrapper-padding {
+    position: absolute;
+    width: 97%;
+    height: 97%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

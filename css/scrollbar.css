@@ -1,5 +1,5 @@
 ::-webkit-scrollbar {
-    width: 20px;
+    width: 14px;
     height: 20px;
 }
 
@@ -26,6 +26,7 @@
     background: #666666;
     border: 0px none #ffffff;
     border-radius: 0px;
+    border-radius: 61px;
 }
 
 ::-webkit-scrollbar-track:hover {
