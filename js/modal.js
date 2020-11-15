@@ -8,6 +8,15 @@ var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 
 function ApplyChanges() {
+    cachesize = document.getElementById('cache_size').value;
+    blocksize = document.getElementById('block_size').value;
+    addresslenght = document.getElementById('address_lenght').value;
+    nway = document.getElementById('nway').value;
+
+    document.cachesize = cachesize;
+    document.blocksize = blocksize;
+    document.addresslenght = addresslenght;
+    document.nway = nway;
 
 }
 

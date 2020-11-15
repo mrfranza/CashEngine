@@ -13,6 +13,10 @@
     text-shadow: black 2px 2px 2px;
 }
 
+#addressing_info {
+    display: none;
+}
+
 .wrapper-padding {
     position: absolute;
     width: 97%;
