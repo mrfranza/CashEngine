@@ -28,6 +28,11 @@ btn.onclick = function() {
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
     ApplyChanges()
+    try {
+        Refresh()
+    } catch (error) {
+        //LOL
+    }
     modal.style.display = "none";
 }
 
@@ -35,6 +40,11 @@ span.onclick = function() {
 window.onclick = function(event) {
     if (event.target == modal) {
         ApplyChanges()
+        try {
+            Refresh()
+        } catch (error) {
+            //LOL
+        }
         modal.style.display = "none";
     }
 }
