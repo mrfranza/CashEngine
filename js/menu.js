@@ -30,11 +30,21 @@ function Refresh() {
     RefreshLinesInfo();
     RefreshSetInfo();
     RefreshWordSize();
+    RefreshTagSize();
     GenCharm();
 }
 
 function RefreshLinesInfo() {
-    var cl = document.getElementById('cache_lines').innerHTML = Math.log2(document.cachesize / document.blocksize) + " bit/s";
+    if (document.nway == 1) {
+        document.linesize = Math.log2(document.cachesize / document.blocksize);
+        document.getElementById('cache_lines').innerHTML = Math.log2(document.cachesize / document.blocksize) + " bit/s";
+    } else if (document.nway == (document.cachesize / document.blocksize)) {
+        document.linesize = 0;
+        document.getElementById('cache_lines').innerHTML = "0 [Fully Associative]"
+    } else {
+        document.linesize = 0;
+        document.getElementById('cache_lines').innerHTML = "0 [Set Associative]"
+    }
 }
 
 function RefreshRAMSize() {
@@ -43,14 +53,31 @@ function RefreshRAMSize() {
 
 function RefreshSetInfo() {
     if (document.nway == 1) {
-        document.getElementById('cache_sets').innerHTML = "Direct Associative [N.Way = 1]";
+        document.setsize = 0;
+        document.getElementById('cache_sets').innerHTML = "Direct Associative [N.Way = 1] <br> 0 bit";
     } else if (document.nway == (document.cachesize / document.blocksize)) {
-        document.getElementById('cache_sets').innerHTML = "Fully Associative [N.Way = NLines]";
+        document.setsize = 0;
+        document.getElementById('cache_sets').innerHTML = "Fully Associative [N.Way = NLines] <br> 0 bit";
     } else {
+        document.setsize = Math.log2((document.cachesize / document.blocksize) / document.nway);
         document.getElementById('cache_sets').innerHTML = Math.log2((document.cachesize / document.blocksize) / document.nway) + " bit/s";
     }
 }
 
 function RefreshWordSize() {
+    document.wordsize = Math.log2(document.blocksize);
     document.getElementById('word_bits').innerHTML = Math.log2(document.blocksize) + " bit/s";
+}
+
+function RefreshTagSize() {
+    if (document.nway == 1) {
+        document.tagsize = document.addresslenght - (Math.log2(document.cachesize / document.blocksize) + Math.log2(document.blocksize));
+        document.getElementById('tagbits').innerHTML = document.addresslenght - (Math.log2(document.cachesize / document.blocksize) + Math.log2(document.blocksize)) + " bit/s";
+    } else if (document.nway == (document.cachesize / document.blocksize)) {
+        document.tagsize = document.addresslenght - Math.log2(document.blocksize);
+        document.getElementById('tagbits').innerHTML = document.addresslenght - Math.log2(document.blocksize) + " bit/s";
+    } else {
+        document.tagsize = document.addresslenght - (Math.log2((document.cachesize / document.blocksize) / document.nway) + Math.log2(document.blocksize));
+        document.getElementById('tagbits').innerHTML = document.addresslenght - (Math.log2((document.cachesize / document.blocksize) / document.nway) + Math.log2(document.blocksize)) + " bit/s";
+    }
 }
