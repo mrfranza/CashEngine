@@ -1,0 +1,27 @@
+#addresschartdivision {
+    position: relative;
+    width: 99%;
+    height: 100px;
+    background-color: #1a1a1a;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.tabela {
+    position: absolute;
+    background-color: rgb(48, 48, 48);
+    width: 99%;
+    height: 50%;
+    left: 50%;
+    border: 1px rgb(24, 24, 24) solid;
+    box-shadow: #0e0e0e 2px 2px 2px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+}
+
+th,
+td {
+    background-color: rgb(172, 222, 255);
+    border-radius: 20px;
+}

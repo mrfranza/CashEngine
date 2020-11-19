@@ -1,6 +1,5 @@
 .wrapper-adrs {
     position: absolute;
-    border: 1px orange solid;
     width: 99%;
     height: 99%;
     margin: 0;
@@ -14,7 +13,7 @@
 }
 
 #addressing_info {
-    display: none;
+    display: block;
 }
 
 .wrapper-padding {
@@ -24,4 +23,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.wrp-content2 {
+    background-color: #1d1d1d;
+    padding: 7px;
 }

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/address.css">
     <link rel="stylesheet" href="css/scrollbar.css">
+    <link rel="stylesheet" href="css/addresschartdivision.css">
     <script src="https://kit.fontawesome.com/b12a5b37b5.js" crossorigin="anonymous"></script>
     <title>Cash Engine</title>
 </head>
@@ -26,10 +27,10 @@
             <a onclick="OpenAddress()">
                 <div class="mn-link">
                     <div class="icon-wrapper">
-                        <i class="link-icon fas fa-memory icon-menu"></i>
+                        <i class="link-icon fas fa-info icon-menu"></i>
                     </div>
                     <div class="text-wrapper">
-                        <div class="link-text">ADDRESS</div>
+                        <div class="link-text">INFO</div>
                     </div>
                 </div>
             </a>
@@ -61,24 +62,51 @@
                     <div class="wrapper-padding">
                         <a>ADDRESSING INFO</a>
 
-                        <p>Cache Size</p>
+                        <p>Lines</p>
                         <div class="wrp-content">
-                            <span>Cache Lines (Cache Size/BlockSize [Only with Word = 1Byte]): </span>
+                            <span>Bit used for Cache Lines</span>
+                            <p style="font-size: smaller;color: coral;">Log2(Cache Size/BlockSize [Only with Word = 1Byte]): </p>
                             <span><h3 id="cache_lines">0</h3></span>
                         </div>
+                        <div class="wrp-content">
+                            <span>Bit used for set</span>
+                            <p style="font-size: smaller;color: coral;">Log2(Cache Lines/Nway):</p>
+                            <span><h3 id="cache_sets">0</h3></span>
+                        </div>
+                        <div class="wrp-content">
+                            <span>Bit used for word</span>
+                            <p style="font-size: smaller;color: coral;">Log2(BlockSize): </p>
+                            <span><h3 id="word_bits">0</h3></span>
+                        </div>
+                        <div class="wrp-content2">
+                            <span>Address rappresentation</span>
+                            <p>
+                                <span style="font-size: smaller;color: rgb(55, 177, 48);">Tag </span>
+                                <span style="font-size: smaller;color: rgb(59, 74, 191);">Lines</span>
+                                <span style="font-size: smaller;color: rgb(169, 58, 58);">Set</span>
+                                <span style="font-size: smaller;color: rgb(196, 150, 0);">Word</span>
+                            </p>
+                            <div id="addresschartdivision">
+                                <table class="tabela">
+                                    <tbody>
+                                        <tr id="row">
+                                            <!--CHART-->
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
 
                         <p>Ram Size</p>
                         <div class="wrp-content">
-                            <span>Ram Size (2^Address Lenght): </span>
+                            <span>Ram Size (2^RAM Address Lenght): </span>
                             <span><h3 id="ram_size">0</h3></span>
                         </div>
                     </div>
                 </div>
             </div>
             <div id="home"></div>
-        </div>
-        <div class="bottom-line">
-            VER Cache Engine Canary 0.01
         </div>
     </section>
 
@@ -136,8 +164,13 @@
 
     </div>
 
+    <div class="bottom-line">
+        Canary 0.01
+    </div>
+
     <script src="js/modal.js"></script>
     <script src="js/menu.js"></script>
+    <script src="js/addresschartdivision.js"></script>
 </body>
 
 </html>

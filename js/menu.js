@@ -21,15 +21,36 @@ function MenuToggle() {
 }
 
 function OpenAddress() {
-    RefreshRAMSize();
-    RefreshAddressInfo();
+    Refresh();
     document.getElementById('addressing_info').style.display = "block";
 }
 
-function RefreshAddressInfo() {
-    var cl = document.getElementById('cache_lines').innerHTML = document.cachesize / document.blocksize + " lines";
+function Refresh() {
+    RefreshRAMSize();
+    RefreshLinesInfo();
+    RefreshSetInfo();
+    RefreshWordSize();
+    GenCharm();
+}
+
+function RefreshLinesInfo() {
+    var cl = document.getElementById('cache_lines').innerHTML = Math.log2(document.cachesize / document.blocksize) + " bit/s";
 }
 
 function RefreshRAMSize() {
     document.getElementById('ram_size').innerHTML = Math.pow(2, document.addresslenght) + " Bytes";
+}
+
+function RefreshSetInfo() {
+    if (document.nway == 1) {
+        document.getElementById('cache_sets').innerHTML = "Direct Associative [N.Way = 1]";
+    } else if (document.nway == (document.cachesize / document.blocksize)) {
+        document.getElementById('cache_sets').innerHTML = "Fully Associative [N.Way = NLines]";
+    } else {
+        document.getElementById('cache_sets').innerHTML = Math.log2((document.cachesize / document.blocksize) / document.nway) + " bit/s";
+    }
+}
+
+function RefreshWordSize() {
+    document.getElementById('word_bits').innerHTML = Math.log2(document.blocksize) + " bit/s";
 }
