@@ -48,7 +48,8 @@ function RefreshLinesInfo() {
 }
 
 function RefreshRAMSize() {
-    document.getElementById('ram_size').innerHTML = Math.pow(2, document.addresslenght) + " Bytes";
+
+    document.getElementById('ram_size').innerHTML = formatBytes(Math.pow(2, document.addresslenght));
 }
 
 function RefreshSetInfo() {
@@ -66,18 +67,18 @@ function RefreshSetInfo() {
 
 function RefreshWordSize() {
     document.wordsize = Math.log2(document.blocksize);
-    document.getElementById('word_bits').innerHTML = Math.log2(document.blocksize) + " bit/s";
+    document.getElementById('word_bits').innerHTML = Math.log2(document.blocksize) + " bit";
 }
 
 function RefreshTagSize() {
     if (document.nway == 1) {
         document.tagsize = document.addresslenght - (Math.log2(document.cachesize / document.blocksize) + Math.log2(document.blocksize));
-        document.getElementById('tagbits').innerHTML = document.addresslenght - (Math.log2(document.cachesize / document.blocksize) + Math.log2(document.blocksize)) + " bit/s";
+        document.getElementById('tagbits').innerHTML = document.addresslenght - (Math.log2(document.cachesize / document.blocksize) + Math.log2(document.blocksize)) + " bit";
     } else if (document.nway == (document.cachesize / document.blocksize)) {
         document.tagsize = document.addresslenght - Math.log2(document.blocksize);
         document.getElementById('tagbits').innerHTML = document.addresslenght - Math.log2(document.blocksize) + " bit/s";
     } else {
         document.tagsize = document.addresslenght - (Math.log2((document.cachesize / document.blocksize) / document.nway) + Math.log2(document.blocksize));
-        document.getElementById('tagbits').innerHTML = document.addresslenght - (Math.log2((document.cachesize / document.blocksize) / document.nway) + Math.log2(document.blocksize)) + " bit/s";
+        document.getElementById('tagbits').innerHTML = document.addresslenght - (Math.log2((document.cachesize / document.blocksize) / document.nway) + Math.log2(document.blocksize)) + " bit";
     }
 }

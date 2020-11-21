@@ -148,23 +148,25 @@
             </div>
 
             <br/><br/><br/>
-            <p>Separated (Addressing/Data) or United CACHE</p>
-            <div class="wrp-content">
-                <p><input type="radio" name="cache_type"> | Separated</p>
-                <p><input type="radio" name="cache_type"> | United</p>
-            </div>
-            <p>Reallocation Policy (Write through/Write back)</p>
-            <div class="wrp-content">
-                <p><input type="radio" name="rewrite"> | Write Back</p>
-                <p><input type="radio" name="rewrite"> | Write Through</p>
-            </div>
-            <p>Write Policy (FIFO,LRU,LFU,RANDOM)</p>
-            <div class="wrp-content">
-                <p><input type="radio" name="w_policy"> | FIFO</p>
-                <p><input type="radio" name="w_policy"> | LRU</p>
-                <p><input type="radio" name="w_policy"> | LFU</p>
-                <p><input type="radio" name="w_policy"> | RANDOM</p>
-            </div>
+            <section style="opacity: 0.1;">
+                <p>Separated (Addressing/Data) or United CACHE</p>
+                <div class="wrp-content">
+                    <p><input type="radio" name="cache_type"> | Separated</p>
+                    <p><input type="radio" name="cache_type"> | United</p>
+                </div>
+                <p>Reallocation Policy (Write through/Write back)</p>
+                <div class="wrp-content">
+                    <p><input type="radio" name="rewrite"> | Write Back</p>
+                    <p><input type="radio" name="rewrite"> | Write Through</p>
+                </div>
+                <p>Write Policy (FIFO,LRU,LFU,RANDOM)</p>
+                <div class="wrp-content">
+                    <p><input type="radio" name="w_policy"> | FIFO</p>
+                    <p><input type="radio" name="w_policy"> | LRU</p>
+                    <p><input type="radio" name="w_policy"> | LFU</p>
+                    <p><input type="radio" name="w_policy"> | RANDOM</p>
+                </div>
+            </section>
         </div>
 
     </div>
@@ -173,6 +175,7 @@
         Canary 0.01
     </div>
 
+    <script src="js/byteConverter.js"></script>
     <script src="js/modal.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/addresschartdivision.js"></script>
