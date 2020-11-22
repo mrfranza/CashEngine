@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/address.css">
+    <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/scrollbar.css">
     <link rel="stylesheet" href="css/addresschartdivision.css">
     <script src="https://kit.fontawesome.com/b12a5b37b5.js" crossorigin="anonymous"></script>
@@ -16,14 +17,16 @@
 <body>
     <section class="main">
         <div class="menu" id="menu">
-            <div class="mn-link top-menu-border">
-                <div class="icon-wrapper">
-                    <i class="link-icon fas fa-home icon-menu"></i>
+            <a onclick="OpenHome()">
+                <div class="mn-link top-menu-border">
+                    <div class="icon-wrapper">
+                        <i class="link-icon fas fa-home icon-menu"></i>
+                    </div>
+                    <div class="text-wrapper">
+                        <div class="link-text">HOME</div>
+                    </div>
                 </div>
-                <div class="text-wrapper">
-                    <div class="link-text">HOME</div>
-                </div>
-            </div>
+            </a>
             <a onclick="OpenAddress()">
                 <div class="mn-link">
                     <div class="icon-wrapper">
@@ -55,8 +58,19 @@
                 </div>
             </a>
         </div>
+
+        <!--DESKTOP-->
         <div class="desktop">
-            <div id="home"></div>
+            <!--HOME-->
+            <div id="home">
+                <div class="wrapper-home">
+                    <div class="wrapper-padding">
+                        <iframe src="src/html/home.html" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!--INFO-->
             <div id="addressing_info">
                 <div class="wrapper-adrs">
                     <div class="wrapper-padding">
@@ -108,10 +122,18 @@
                             <span>Ram Size (2^RAM Address Lenght): </span>
                             <span><h3 id="ram_size">0</h3></span>
                         </div>
+
+                        <p>Cash rappresentation</p>
+                        <div class="wrp-content">
+                            <table id="cash_info_design" style="position:relative;border:1px solid #406dff;">
+                                <!--CASH GRAPHIC INFO-->
+                            </table>
+                        </div>
+
+                        <br><br>
                     </div>
                 </div>
             </div>
-            <div id="home"></div>
         </div>
     </section>
 
@@ -179,6 +201,7 @@
     <script src="js/modal.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/addresschartdivision.js"></script>
+    <script src="js/designCash.js"></script>
 </body>
 
 </html>
