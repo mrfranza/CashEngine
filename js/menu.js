@@ -39,6 +39,7 @@ function Refresh() {
     RefreshWordSize();
     RefreshTagSize();
     GenCharm();
+    DrawTable();
 }
 
 function RefreshLinesInfo() {

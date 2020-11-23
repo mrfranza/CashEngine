@@ -8,15 +8,15 @@ var word = document.wordsize;
 function GenCharm() {
     row.innerHTML = "";
     for (i = 0; i < document.tagsize; i++) {
-        row.insertAdjacentHTML('beforeend', "<td style='background-color: rgba(55, 177, 48, 0.5);' id='" + i + "column'>&nbsp;</td>")
+        row.insertAdjacentHTML('beforeend', "<td style='background-color: #0F9D58;' id='" + i + "column'>&nbsp;</td>")
     }
     for (i = 0; i < document.linesize; i++) {
-        row.insertAdjacentHTML('beforeend', "<td style='background-color: rgba(59, 74, 191, 0.5);' id='" + i + "column'>&nbsp;</td>")
+        row.insertAdjacentHTML('beforeend', "<td style='background-color: #4285F4;' id='" + i + "column'>&nbsp;</td>")
     }
     for (i = 0; i < document.setsize; i++) {
-        row.insertAdjacentHTML('beforeend', "<td style='background-color: rgba(169, 58, 58, 0.5);' id='" + i + "column'>&nbsp;</td>")
+        row.insertAdjacentHTML('beforeend', "<td style='background-color: #DB4437;' id='" + i + "column'>&nbsp;</td>")
     }
     for (i = 0; i < document.wordsize; i++) {
-        row.insertAdjacentHTML('beforeend', "<td style='background-color: rgba(196, 150, 0, 0.5);' id='" + i + "column'>&nbsp;</td>")
+        row.insertAdjacentHTML('beforeend', "<td style='background-color: #F4B400;' id='" + i + "column'>&nbsp;</td>")
     }
 }
