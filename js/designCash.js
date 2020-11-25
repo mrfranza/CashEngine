@@ -45,14 +45,14 @@ function DrawTable() {
         tmpriga = document.getElementById("rigamenu");
         tmpriga.insertAdjacentHTML('beforeend', "<td style='border-radius:0;background-color:#272727;'></td>")
         for (k = 0; k < document.nway; k++) {
-            tmpriga.insertAdjacentHTML('beforeend', "<td style='border-radius:0;background-color:#F4B400;'>LINE/BLOCK</td>")
+            tmpriga.insertAdjacentHTML('beforeend', "<td style='border-radius:0;background-color:#F4B40040;'>LINE/BLOCK</td>")
         }
 
         //quante righe? linee/nway
         divisione = numberoflines / numberofsets;
 
         for (i = 0; i < divisione; i++) {
-            tabellabody.insertAdjacentHTML('beforeend', '<tr id="riga' + i + '" style="border-radius:0;background-color:red;"></tr>');
+            tabellabody.insertAdjacentHTML('beforeend', '<tr id="riga' + i + '" style="border-radius:0;"></tr>');
             tmpriga = document.getElementById("riga" + i);
 
             //titolo

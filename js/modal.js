@@ -20,6 +20,37 @@ function ApplyChanges() {
 
 }
 
+function CheckSettings() {
+    cachesize = document.getElementById('cache_size').value;
+    blocksize = document.getElementById('block_size').value;
+    addresslenght = document.getElementById('address_lenght').value;
+    nway = document.getElementById('nway').value;
+
+    //BLOCK
+    var checkblock = cachesize % blocksize;
+    if (checkblock == 0) {
+        document.getElementById('wrp-cache-modal').style.backgroundColor = "#272727";
+    } else {
+        alert("BLOCK ERROR")
+        document.getElementById('wrp-cache-modal').style.backgroundColor = "red";
+        return false;
+    }
+
+    //CHECK CACHE SIZE
+    var checkcache = cachesize % (nway * blocksize);
+    if (checkcache == 0) {
+        //x is a multiple of y --> cache valid
+        document.getElementById('wrp-block-size').style.backgroundColor = "#272727";
+    } else {
+        //x is not a multiple of y --> cache not valid
+        alert("CACHE ERROR \nData Cache size must be a multiple of associativity*blocksize")
+        document.getElementById('wrp-block-size').style.backgroundColor = "red";
+        return false;
+    }
+    return true;
+}
+
+
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
     modal.style.display = "block";
@@ -27,24 +58,13 @@ btn.onclick = function() {
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
-    ApplyChanges()
-    try {
-        Refresh()
-    } catch (error) {
-        //LOL
-    }
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
+    if (CheckSettings()) {
         ApplyChanges()
         try {
             Refresh()
+            modal.style.display = "none";
         } catch (error) {
             //LOL
         }
-        modal.style.display = "none";
     }
 }
