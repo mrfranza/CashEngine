@@ -47,6 +47,15 @@ function CheckSettings() {
         document.getElementById('wrp-block-size').style.backgroundColor = "red";
         return false;
     }
+
+    if (addresslenght >= 8) {
+        document.getElementById('wrp-address-lenght').style.backgroundColor = "#272727";
+    } else {
+        alert("Address ERROR \nplease use an address with a lenght of minimum 8 bit")
+        document.getElementById('wrp-address-lenght').style.backgroundColor = "red";
+        return false;
+    }
+
     return true;
 }
 
