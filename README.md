@@ -1,7 +1,5 @@
 # Cash Engine Simulation Project
 
-![Cash Engine Logo](link_to_your_logo_image.png)
-
 ## Table of Contents
 
 - [Introduction](#introduction)
