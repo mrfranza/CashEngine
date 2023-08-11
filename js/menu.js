@@ -26,12 +26,6 @@ function OpenAddress() {
     document.getElementById('addressing_info').style.display = "block";
 }
 
-function OpenHome() {
-    Refresh();
-    document.getElementById('addressing_info').style.display = "none";
-    document.getElementById('home').style.display = "block";
-}
-
 function Refresh() {
     RefreshRAMSize();
     RefreshLinesInfo();
